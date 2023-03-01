@@ -1,4 +1,4 @@
-package ma.enset.tp1.dao;
+package ma.enset.dao;
 
 public interface IDao {
     double getDate();

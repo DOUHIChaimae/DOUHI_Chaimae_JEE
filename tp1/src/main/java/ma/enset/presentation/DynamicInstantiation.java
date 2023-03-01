@@ -1,7 +1,7 @@
-package ma.enset.tp1.presentation;
+package ma.enset.presentation;
 
-import ma.enset.tp1.dao.IDao;
-import ma.enset.tp1.metier.IMetier;
+import ma.enset.dao.IDao;
+import ma.enset.metier.IMetier;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class DynamicInstantiation {
     public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, InvocationTargetException {
-        Scanner scanner = new Scanner(new File("config.txt"));
+        Scanner scanner = new Scanner(new File("tp1/config.txt"));
         String daoClassName = scanner.next();
         String metierClassName = scanner.next();
         Class cdao = Class.forName(daoClassName);
@@ -21,7 +21,5 @@ public class DynamicInstantiation {
         Method method = cmetier.getMethod("setDao", IDao.class);
         method.invoke(metierImpl,dao);
         System.out.println(metierImpl.calcul());
-
-
     }
 }

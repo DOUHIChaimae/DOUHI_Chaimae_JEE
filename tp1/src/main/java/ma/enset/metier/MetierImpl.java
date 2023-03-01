@@ -1,13 +1,13 @@
-package ma.enset.tp1.metier;
+package ma.enset.metier;
 
-import ma.enset.tp1.dao.IDao;
+import ma.enset.dao.IDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MetierImpl implements IMetier {
     @Autowired
-    IDao dao;
+    private IDao dao;
 
     @Override
     public double calcul() {
@@ -16,8 +16,7 @@ public class MetierImpl implements IMetier {
         return res;
     }
 
-    /*Pour injecter dans la variable dao un objet d'une classe qui implémente
-    l'interface IDao*/
+    //setDao() to inject in dao variable an object of a clss that implements IDao interface
     public void setDao(IDao dao) {
         this.dao = dao;
     }
