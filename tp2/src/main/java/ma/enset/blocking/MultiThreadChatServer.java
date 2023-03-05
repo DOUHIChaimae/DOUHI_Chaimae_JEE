@@ -3,24 +3,31 @@ package ma.enset.blocking;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
-public class MultiThreadBlockingServer extends Thread {
+public class MultiThreadChatServer extends Thread {
+    private List<Conversation> conversations = new ArrayList<>();
     int clientsCount;
 
     public static void main(String[] args) {
-        new MultiThreadBlockingServer().start();
+        new MultiThreadChatServer().start();
 
     }
 
     @Override
     public void run() {
-        System.out.println("The server is started using port 1234!!");
+        System.out.println("The server is started using port 1235");
+
         try {
-            ServerSocket serverSocket = new ServerSocket(1234);
+            ServerSocket serverSocket = new ServerSocket(1235);
             while (true) {
                 Socket socket = serverSocket.accept();
                 ++clientsCount;
-                new Conversation(socket, clientsCount).start();
+                Conversation conversation = new Conversation(socket, clientsCount);
+                conversations.add(conversation);
+                conversation.start();
+
             }
 
         } catch (IOException e) {
@@ -51,13 +58,25 @@ public class MultiThreadBlockingServer extends Thread {
                 String request;
                 while ((request = br.readLine()) != null) {
                     System.out.println("New request  => Ip : " + ip + " request : " + request);
-                    String reponse = "size is " + request.length();
-                    pw.println(reponse);
+                    broadCastMessage(request);
                 }
 
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        }
+    }
+
+    public void broadCastMessage(String message) {
+        try {
+            for (Conversation conversation : conversations) {
+                Socket socket = conversation.socket;
+                OutputStream outputStream = socket.getOutputStream();
+                PrintWriter printWriter = new PrintWriter(outputStream,true);
+                printWriter.println(message);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
