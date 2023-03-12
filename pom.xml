@@ -9,8 +9,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>tp1</module>
-        <module>tp2</module>
+        <module>tp1-inversion-contrôle-injection-dépendances</module>
+        <module>tp2-programmation-résaux</module>
+        <module>tp3-jpa-hibernate-spring-data</module>
     </modules>
 
     <properties>
