@@ -32,7 +32,8 @@ public class JpaApplication implements CommandLineRunner {
 		System.out.println(patients.getNumber());
 		List<Patient> content = patients.getContent();
 		Page<Patient> bySickness = patientRepository.findByIsSick(true, PageRequest.of(0, 5));
-		bySickness.forEach(
+		List<Patient> patientList =patientRepository.searchPatients("l%",200);
+		patientList.forEach(
 				p -> {
 					System.out.println("======================================");
 					System.out.println(p.getId());
@@ -43,7 +44,7 @@ public class JpaApplication implements CommandLineRunner {
 				}
 		);
 		System.out.println("***************************");
-		Patient patient = patientRepository.findById(1L).orElse(null);
+		Patient patient = patientRepository.findById(3L).orElse(null);
 		if (patient != null) {
 			System.out.println(patient.getName());
 			System.out.println(patient.getBirthday());
@@ -51,6 +52,6 @@ public class JpaApplication implements CommandLineRunner {
 		}
 		patient.setScore(8754);
 		patientRepository.save(patient);
-		patientRepository.deleteById(1L);
+		//patientRepository.deleteById(1L);
 	}
 }
