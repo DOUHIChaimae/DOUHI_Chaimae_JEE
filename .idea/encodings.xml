@@ -4,11 +4,18 @@
     <file url="file://$PROJECT_DIR$/jpa-ap/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp1-inversion-contrôle-injection-dépendances/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp1-inversion-contrôle-injection-dépendances/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tp1/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tp1/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp2-ProgrammationReseaux/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp2-ProgrammationReseaux/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp2-programmation-résaux/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp2-programmation-résaux/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tp2/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tp2/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tp3-jpa-hibernate-spring-data/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tp3-jpa-hibernate-spring-data/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp3-jpa-hibernate-springdata/src/main/java" charset="UTF-8" />
   </component>
 </project>
