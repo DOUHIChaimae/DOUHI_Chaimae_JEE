@@ -1,4 +1,4 @@
-package ma.enset.dao;
+package ma.enset.part1.dao;
 
 import org.springframework.stereotype.Component;
 

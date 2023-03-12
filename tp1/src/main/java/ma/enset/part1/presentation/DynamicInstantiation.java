@@ -1,7 +1,7 @@
-package ma.enset.presentation;
+package ma.enset.part1.presentation;
 
-import ma.enset.dao.IDao;
-import ma.enset.metier.IMetier;
+import ma.enset.part1.dao.IDao;
+import ma.enset.part1.metier.IMetier;
 
 import java.io.File;
 import java.io.FileNotFoundException;

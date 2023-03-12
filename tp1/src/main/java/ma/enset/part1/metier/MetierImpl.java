@@ -1,6 +1,6 @@
-package ma.enset.metier;
+package ma.enset.part1.metier;
 
-import ma.enset.dao.IDao;
+import ma.enset.part1.dao.IDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

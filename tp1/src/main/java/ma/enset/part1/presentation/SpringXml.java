@@ -1,6 +1,6 @@
-package ma.enset.presentation;
+package ma.enset.part1.presentation;
 
-import ma.enset.metier.IMetier;
+import ma.enset.part1.metier.IMetier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

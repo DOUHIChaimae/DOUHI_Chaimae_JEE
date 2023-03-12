@@ -1,6 +1,6 @@
-package ma.enset.ext;
+package ma.enset.part1.ext;
 
-import ma.enset.dao.IDao;
+import ma.enset.part1.dao.IDao;
 
 public class DaoImpl2 implements IDao {
     @Override

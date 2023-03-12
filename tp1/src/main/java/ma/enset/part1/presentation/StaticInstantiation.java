@@ -1,7 +1,7 @@
-package ma.enset.presentation;
+package ma.enset.part1.presentation;
 
-import ma.enset.ext.DaoImpl2;
-import ma.enset.metier.MetierImpl;
+import ma.enset.part1.ext.DaoImpl2;
+import ma.enset.part1.metier.MetierImpl;
 
 public class StaticInstantiation {
     public static void main(String[] args) {
