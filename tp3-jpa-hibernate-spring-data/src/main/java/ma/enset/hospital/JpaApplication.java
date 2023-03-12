@@ -1,7 +1,7 @@
-package ma.enset.jpa;
+package ma.enset.hospital;
 
-import ma.enset.jpa.entities.Patient;
-import ma.enset.jpa.repositories.PatientRepository;
+import ma.enset.hospital.entities.Patient;
+import ma.enset.hospital.repositories.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

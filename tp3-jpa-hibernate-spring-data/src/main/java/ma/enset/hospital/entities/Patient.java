@@ -1,4 +1,4 @@
-package ma.enset.jpa.entities;
+package ma.enset.hospital.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
