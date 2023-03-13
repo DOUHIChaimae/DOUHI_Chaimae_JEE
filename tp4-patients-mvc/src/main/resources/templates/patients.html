@@ -30,6 +30,11 @@
                 </tr>
                 </tbody>
             </table>
+            <ul>
+                <li th:each="page,status:${pages}">
+                    <a th:text="${status.index}"></a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
