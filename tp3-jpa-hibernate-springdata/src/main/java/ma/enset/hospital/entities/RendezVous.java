@@ -13,10 +13,10 @@ import java.util.Date;
 public class RendezVous {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     private Date date;
+    @Enumerated(EnumType.STRING)
     private RDVStatus status;
-    private Boolean canceled;
     @ManyToOne
     private Patient patient;
     @ManyToOne

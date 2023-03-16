@@ -22,6 +22,8 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
 
     List<Patient> findByBirthdayBetween(Date date1, Date date2);
 
+    Patient findByName(String name);
+
     @Query("select p from Patient p where p.name like :x and p.score < :y")
     List<Patient> searchPatients(@Param("x") String nom, @Param("y") int scoreMin);
 }
