@@ -3,9 +3,9 @@ package ma.enset.hospital.services;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import ma.enset.hospital.entities.*;
-import ma.enset.hospital.repositories.MedecinRepository;
+import ma.enset.hospital.repositories.DoctorRepository;
 import ma.enset.hospital.repositories.PatientRepository;
-import ma.enset.hospital.repositories.RendezVousRepository;
+import ma.enset.hospital.repositories.AppointmentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -16,8 +16,8 @@ import java.util.stream.Stream;
 @Transactional
 public class BootstrapDataServiceImpl implements BootstrapDataService {
     private PatientRepository patientRepository;
-    private MedecinRepository medecinRepository;
-    private RendezVousRepository rendezVousRepository;
+    private DoctorRepository doctorRepository;
+    private AppointmentRepository appointmentRepository;
     private IHospitalService hospitalService;
     private UserService userService;
 
@@ -36,13 +36,13 @@ public class BootstrapDataServiceImpl implements BootstrapDataService {
 
     @Override
     public void initDoctors() {
-        Stream.of("medecin1", "medecin2", "medecin3", "medecin4")
+        Stream.of("doctor1", "doctor2", "doctor3", "doctor4")
                 .forEach(name -> {
-                            Medecin medecin = new Medecin();
-                            medecin.setName(name);
-                            medecin.setSpeciality(Math.random() > 0.5 ? "Cardio" : "dentist");
-                            medecin.setEmail(name + "@gmail.com");
-                            hospitalService.saveMedecin(medecin);
+                            Doctor doctor = new Doctor();
+                            doctor.setName(name);
+                            doctor.setSpeciality(Math.random() > 0.5 ? "Cardio" : "dentist");
+                            doctor.setEmail(name + "@gmail.com");
+                            hospitalService.saveMedecin(doctor);
                         }
                 );
     }
@@ -60,21 +60,21 @@ public class BootstrapDataServiceImpl implements BootstrapDataService {
     @Override
     public void initAppointments() {
         Patient patient = patientRepository.findAll().get(0);
-        Medecin medecin = medecinRepository.findByName("medecin2");
-        RendezVous rendezVous = new RendezVous();
-        rendezVous.setDate(new Date());
-        rendezVous.setStatus(RDVStatus.PENDING);
-        rendezVous.setMedecin(medecin);
-        rendezVous.setPatient(patient);
-        hospitalService.saveRDV(rendezVous);
+        Doctor doctor = doctorRepository.findByName("doctor2");
+        Appointment appointment = new Appointment();
+        appointment.setDate(new Date());
+        appointment.setStatus(AppointmentStatus.PENDING);
+        appointment.setDoctor(doctor);
+        appointment.setPatient(patient);
+        hospitalService.saveRDV(appointment);
     }
 
     @Override
     public void initConsultations() {
-        RendezVous rendezVous = rendezVousRepository.findAll().get(0);
+        Appointment appointment = appointmentRepository.findAll().get(0);
         Consultation consultation = new Consultation();
         consultation.setConsultationDate(new Date());
-        consultation.setRendezVous(rendezVous);
+        consultation.setAppointment(appointment);
         consultation.setRapport("Rapport de la consultation..");
         hospitalService.saveConsultation(consultation);
     }

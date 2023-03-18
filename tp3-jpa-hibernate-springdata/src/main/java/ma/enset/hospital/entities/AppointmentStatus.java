@@ -1,6 +1,6 @@
 package ma.enset.hospital.entities;
 
-public enum RDVStatus {
+public enum AppointmentStatus {
     PENDING,
     CANCELED,
     DONE

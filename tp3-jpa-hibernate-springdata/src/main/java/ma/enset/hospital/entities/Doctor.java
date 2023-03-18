@@ -11,14 +11,14 @@ import java.util.Collection;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Medecin {
+public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String speciality;
     private String email;
-    @OneToMany(mappedBy = "medecin",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "doctor",fetch = FetchType.LAZY)
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private Collection<RendezVous> rendezVous;
+    private Collection<Appointment> appointments;
 }

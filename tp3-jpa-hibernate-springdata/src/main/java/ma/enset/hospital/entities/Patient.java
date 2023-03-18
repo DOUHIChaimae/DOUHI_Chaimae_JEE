@@ -23,7 +23,6 @@ public class Patient {
     private Boolean isSick;
     private int score;
     @OneToMany(mappedBy = "patient",fetch = FetchType.LAZY)
-    private Collection<RendezVous> rendezVous;
-
+    private Collection<Appointment> appointments;
 
 }

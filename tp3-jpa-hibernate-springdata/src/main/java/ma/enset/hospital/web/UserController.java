@@ -1,7 +1,6 @@
 package ma.enset.hospital.web;
 
 import ma.enset.hospital.entities.User;
-import ma.enset.hospital.repositories.UserRepository;
 import ma.enset.hospital.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

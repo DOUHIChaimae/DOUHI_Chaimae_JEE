@@ -19,5 +19,5 @@ public class Consultation {
     private String rapport;
     @OneToOne
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private RendezVous rendezVous;
+    private Appointment appointment;
 }

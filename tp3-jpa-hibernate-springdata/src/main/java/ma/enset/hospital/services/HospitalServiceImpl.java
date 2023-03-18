@@ -2,13 +2,13 @@ package ma.enset.hospital.services;
 
 import jakarta.transaction.Transactional;
 import ma.enset.hospital.entities.Consultation;
-import ma.enset.hospital.entities.Medecin;
+import ma.enset.hospital.entities.Doctor;
 import ma.enset.hospital.entities.Patient;
-import ma.enset.hospital.entities.RendezVous;
+import ma.enset.hospital.entities.Appointment;
 import ma.enset.hospital.repositories.ConsultationRepository;
-import ma.enset.hospital.repositories.MedecinRepository;
+import ma.enset.hospital.repositories.DoctorRepository;
 import ma.enset.hospital.repositories.PatientRepository;
-import ma.enset.hospital.repositories.RendezVousRepository;
+import ma.enset.hospital.repositories.AppointmentRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
@@ -17,14 +17,14 @@ import java.util.UUID;
 @Transactional
 public class HospitalServiceImpl implements IHospitalService {
     private PatientRepository patientRepository;
-    private MedecinRepository medecinRepository;
-    private RendezVousRepository rendezVousRepository;
+    private DoctorRepository doctorRepository;
+    private AppointmentRepository appointmentRepository;
     private ConsultationRepository consultationRepository;
 
-    public HospitalServiceImpl(PatientRepository patientRepository, MedecinRepository medecinRepository, RendezVousRepository rendezVousRepository, ConsultationRepository consultationRepository) {
+    public HospitalServiceImpl(PatientRepository patientRepository, DoctorRepository doctorRepository, AppointmentRepository appointmentRepository, ConsultationRepository consultationRepository) {
         this.patientRepository = patientRepository;
-        this.medecinRepository = medecinRepository;
-        this.rendezVousRepository = rendezVousRepository;
+        this.doctorRepository = doctorRepository;
+        this.appointmentRepository = appointmentRepository;
         this.consultationRepository = consultationRepository;
     }
 
@@ -34,14 +34,14 @@ public class HospitalServiceImpl implements IHospitalService {
     }
 
     @Override
-    public Medecin saveMedecin(Medecin medecin) {
-        return medecinRepository.save(medecin);
+    public Doctor saveMedecin(Doctor doctor) {
+        return doctorRepository.save(doctor);
     }
 
     @Override
-    public RendezVous saveRDV(RendezVous rendezVous) {
-        rendezVous.setId(UUID.randomUUID().toString());
-        return rendezVousRepository.save(rendezVous);
+    public Appointment saveRDV(Appointment appointment) {
+        appointment.setId(UUID.randomUUID().toString());
+        return appointmentRepository.save(appointment);
     }
 
     @Override

@@ -1,13 +1,13 @@
 package ma.enset.hospital.services;
 
 import ma.enset.hospital.entities.Consultation;
-import ma.enset.hospital.entities.Medecin;
+import ma.enset.hospital.entities.Doctor;
 import ma.enset.hospital.entities.Patient;
-import ma.enset.hospital.entities.RendezVous;
+import ma.enset.hospital.entities.Appointment;
 
 public interface IHospitalService {
      Patient savePatient(Patient patient);
-     Medecin saveMedecin(Medecin medecin);
-     RendezVous saveRDV(RendezVous rendezVous);
+     Doctor saveMedecin(Doctor doctor);
+     Appointment saveRDV(Appointment appointment);
      Consultation saveConsultation(Consultation consultation);
 }
