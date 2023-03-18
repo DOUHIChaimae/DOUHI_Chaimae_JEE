@@ -12,7 +12,7 @@
         <div class="card-body">
             <form method="get" th:action="@{index}">
                 <label>Key word</label>
-                <input type="text" name="keyword">
+                <input type="text" name="keyword" th:value="${keyword}">
                 <button type="submit" class="btn btn-primary">Search</button>
             </form>
             <table class="table">
@@ -21,7 +21,7 @@
                     <th>ID</th>
                     <th>Nom</th>
                     <th>Date</th>
-                    <th>Malde</th>
+                    <th>Malade</th>
                     <th>Score</th>
                 </tr>
                 </thead>
@@ -32,6 +32,9 @@
                     <td th:text="${p.birthday}"></td>
                     <td th:text="${p.isSick}"></td>
                     <td th:text="${p.score}"></td>
+                    <td>
+                        <a class="btn btn-danger" th:href="@{delete(id=${p.id})}">Delete</a>
+                    </td>
                 </tr>
                 </tbody>
             </table>
@@ -39,7 +42,7 @@
                 <li th:each="page,status:${pages}">
                     <a th:class="${status.index==currentPage?'btn btn-primary ms-1':'btn btn-outline-info ms-1'} "
                        th:text="${status.index}"
-                       th:href="@{index(page=${status.index})}"
+                       th:href="@{index(page=${status.index},keyword=${keyword})}"
                     ></a>
                 </li>
             </ul>
