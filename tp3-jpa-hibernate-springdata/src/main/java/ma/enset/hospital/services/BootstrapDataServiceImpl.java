@@ -23,7 +23,7 @@ public class BootstrapDataServiceImpl implements BootstrapDataService {
 
     @Override
     public void initPatients() {
-        Stream.of("patient1", "patient2", "patient3", "patient4", "patient5")
+        Stream.of("patient1", "patient2", "patient3")
                 .forEach(name -> {
                     Patient patient = new Patient();
                     patient.setName(name);
