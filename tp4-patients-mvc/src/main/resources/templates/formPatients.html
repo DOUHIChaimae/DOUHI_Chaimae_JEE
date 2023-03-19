@@ -14,21 +14,16 @@
         <form method="post" th:action="@{save}">
             <div>
                 <label for="name">name</label>
-                <input id="name" class="form-control" type="text" name="nom" th:value="${patient.name}">
+                <input id="name" class="form-control" type="text" name="name" th:value="${patient.name}">
                 <span th:errors="${patient.name}"></span>
             </div>
             <div>
                 <label>Birth date</label>
-                <input class="form-control" type="date" name="birthDate" th:value="${patient.birthday}">
+                <input class="form-control" type="date" name="birthday" th:value="${patient.birthday}">
                 <span th:errors="${patient.birthday}"></span>
             </div>
             <div>
                 <label>isSick?</label>
-                <input class="form-control" type="text" name="birthDate" th:value="${patient.birthday}">
-                <span th:errors="${patient.birthday}"></span>
-            </div>
-            <div>
-                <label>Birth date</label>
                 <input type="checkbox" name="isSick" th:checked="${patient.isSick}">
                 <span th:errors="${patient.isSick}"></span>
             </div>
