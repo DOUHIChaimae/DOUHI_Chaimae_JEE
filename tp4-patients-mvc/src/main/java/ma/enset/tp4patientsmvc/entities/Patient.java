@@ -1,6 +1,9 @@
 package ma.enset.tp4patientsmvc.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,11 +21,13 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "NOM", length = 50)
+    @NotEmpty
+    @Size(min = 4, max = 40)
     private String name;
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
     private Boolean isSick;
+    @DecimalMin("100")
     private int score;
 }
