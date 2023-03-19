@@ -61,7 +61,7 @@ public class PatientController {
     public String savePatient(Model model, @Valid Patient patient, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) return "formPatients";
         patientRepository.save(patient);
-        return "redirect:/formPatients";
+        return "redirect:/index";
     }
 
     @GetMapping("/editPatient")
