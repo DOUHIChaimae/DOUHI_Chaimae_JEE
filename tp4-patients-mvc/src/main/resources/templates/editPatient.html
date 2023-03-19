@@ -11,7 +11,7 @@
 <body>
 <div layout:fragment="content1">
     <div class="col-md-6 offset-3">
-        <form method="post" th:action="@{save}">
+        <form method="post" th:action="@{save(page=${page}, keyword=${keyword})}">
             <div>
                 <label>ID</label>
                 <input class="form-control" type="text" name="id" th:value="${patient.id}">
@@ -19,17 +19,17 @@
             <div>
                 <label for="name">name</label>
                 <input id="name" class="form-control" type="text" name="name" th:value="${patient.name}">
-                <span  class="text-danger" th:errors="${patient.name}"></span>
+                <span class="text-danger" th:errors="${patient.name}"></span>
             </div>
             <div>
                 <label>Birth date</label>
                 <input class="form-control" type="date" name="birthday" th:value="${patient.birthday}">
-                <span  class="text-danger" th:errors="${patient.birthday}"></span>
+                <span class="text-danger" th:errors="${patient.birthday}"></span>
             </div>
             <div>
                 <label>isSick?</label>
                 <input type="checkbox" name="isSick" th:checked="${patient.isSick}">
-                <span  class="text-danger" th:errors="${patient.isSick}"></span>
+                <span class="text-danger" th:errors="${patient.isSick}"></span>
             </div>
             <div>
                 <label>Score</label>
