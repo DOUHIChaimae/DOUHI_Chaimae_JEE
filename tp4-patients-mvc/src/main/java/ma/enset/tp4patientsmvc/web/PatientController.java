@@ -44,8 +44,13 @@ public class PatientController {
 
     @GetMapping("/patients")
     @ResponseBody
-    private List<Patient> patientList(){
+    public List<Patient> patientList() {
         return patientRepository.findAll();
     }
 
+    @GetMapping("/formPatients")
+    public String formPatient(Model model) {
+        model.addAttribute("patient",new Patient());
+        return "formPatients";
+    }
 }
