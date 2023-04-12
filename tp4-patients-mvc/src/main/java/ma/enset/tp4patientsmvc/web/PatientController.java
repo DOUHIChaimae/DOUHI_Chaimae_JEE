@@ -77,5 +77,4 @@ public class PatientController {
         model.addAttribute("keyword", keyword);
         return "editPatient";
     }
-
 }
