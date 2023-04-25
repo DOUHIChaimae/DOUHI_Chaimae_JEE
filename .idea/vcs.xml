@@ -6,5 +6,6 @@
     <mapping directory="$PROJECT_DIR$/tp1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tp3-jpa-hibernate-springdata" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tp4-patients-mvc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tp6-micro-service" vcs="Git" />
   </component>
 </project>
