@@ -1,0 +1,2 @@
+ma.enset.tp1.part1.dao.DaoImpl
+ma.enset.tp1.part1.metier.MetierImpl

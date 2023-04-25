@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/enset-ws/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/enset-ws/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpa-ap/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/patient-mvc-jpa/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/patient-mvc-jpa/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp1-inversion-contrôle-injection-dépendances/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp1-inversion-contrôle-injection-dépendances/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp1/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp1/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp2-ProgrammationReseaux/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp2-ProgrammationReseaux/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp2-programmation-résaux/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp2-programmation-résaux/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp2/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp3-jpa-hibernate-spring-data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp3-jpa-hibernate-spring-data/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp3-jpa-hibernate-springdata/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp4-patients-mvc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp4-patients-mvc/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

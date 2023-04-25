@@ -1,0 +1,48 @@
+1. entity
+2. PatientRepostory
+3.pour tester l'app => CommandLineRunner pour ajouter qq patients
+4./**H2-database**
+spring.datasource.url=jdbc:h2:mem:quiz_pat
+spring.h2.console.enabled=true
+server.port=8085*/
+localhost:8082/h2-console
+pour utiliser thymeleaf : xmlns:th="http://www.thymeleaf.org"
+pour utiliser bootstrap : 1. <!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+                          <dependency>
+                              <groupId>org.webjars</groupId>
+                              <artifactId>bootstrap</artifactId>
+                              <version>5.2.3</version>
+                          </dependency>
+                          2.<link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css"
+5.On ajoute la pagination  => on bascule vers mysql(on désactive la dépendance h2-db et on ajoute mysql dependency)
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.29</version>
+        </dependency>
+6. on change dans application.properties
+server.port=8082
+spring.datasource.url=jdbc:mysql://localhost:3306/DBB_Name?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MariaDBDialect
+spring.jpa.show-sql=true
+7. on fait la pagination => dans PatientController
+                         => findAll(Pageable)
+8. tester si la pagination ç marche http://localhost:8085/index?page=2&size=3
+9. on ajoute: model.addAttribute("pages",new int[pagePatients.getTotalPages()]);
+10. dans  patients.html on ajoute   <ul>
+                                        ....
+                                    </u>
+N.b Pour faire la validation : 1- dependency
+                               2- Annotation dans entity
+                               3- @Valid ds le controlleur
+- pour afficher l'utilisateur qui est authentifié on ajoute la
+dépendance <dependency>
+           			<groupId>org.thymeleaf.extras</groupId>
+           			<artifactId>thymeleaf-extras-springsecurity6</artifactId>
+           			<version>3.1.0.M1</version>
+           		</dependency>
+
+
