@@ -10,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Date;
+import java.util.List;
 
 @SpringBootApplication
 public class PatientMvcJpaApplication {
@@ -18,8 +19,6 @@ public class PatientMvcJpaApplication {
         SpringApplication.run(PatientMvcJpaApplication.class, args);
     }
 
-    //Pour tester notre application on utilise commandLineRunner
-    //On ajoute qq patients
     @Bean
     CommandLineRunner commandLineRunner(PatientRepository patientRepository) {
         return args -> {
@@ -30,13 +29,39 @@ public class PatientMvcJpaApplication {
             patientRepository.save(
                     new Patient(null, "lolo", new Date(), true, 123));
             patientRepository.save(
-                    new Patient(null, "blabla", new Date(), false, 100));
-            patientRepository.findAll().forEach(
+                    new Patient(null, "nour", new Date(), false, 100));
+
+            List<Patient> patientList = patientRepository.findAll();
+            patientList.forEach(
                     patient -> {
+                        System.out.println("=================================");
+                        System.out.println(patient.getId());
                         System.out.println(patient.getNom());
+                        System.out.println(patient.getScore());
+                        System.out.println(patient.getDateNaissance());
+                        System.out.println(patient.getMalade());
                     }
             );
+            Patient patient = patientRepository.findById(1L).orElse(null);
+            System.out.println("==========consulter un patient==================");
+            if (patient != null) {
+                System.out.println(patient.getId());
+                System.out.println(patient.getNom());
+                System.out.println(patient.getScore());
+                System.out.println(patient.getDateNaissance());
+                System.out.println(patient.getMalade());
+            }
+            patient.setScore(258);
+            patientRepository.save(patient);
+            System.out.println("les informations du patients 1 que nous avons mis à jour ");
+            System.out.println(patient.getId());
+            System.out.println(patient.getNom());
+            System.out.println(patient.getScore());
+            System.out.println(patient.getDateNaissance());
+            System.out.println(patient.getMalade());
+            patientRepository.deleteById(1L);
         };
+
     }
 
     @Bean
