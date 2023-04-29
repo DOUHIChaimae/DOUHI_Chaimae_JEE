@@ -84,17 +84,17 @@ public class JpaApplication implements CommandLineRunner {
                 }
         );
         System.out.println("chercher des patients par nom qui contient 'ou' et qui ont le score inférieur à 40");
-        List<Patient> patientsByNameAndScore = patientRepository.searchPatients("%ou%", 40);
-        patientsByNameAndScore.forEach(
-                p -> {
-                    System.out.println("======================================");
-                    System.out.println(p.getId());
-                    System.out.println(p.getName());
-                    System.out.println(p.getBirthday());
-                    System.out.println(p.getScore());
-                    System.out.println(p.getIsSick());
-                }
-        );
+//        List<Patient> patientsByNameAndScore = patientRepository.searchPatients("%ou%", 40);
+//        patientsByNameAndScore.forEach(
+//                p -> {
+//                    System.out.println("======================================");
+//                    System.out.println(p.getId());
+//                    System.out.println(p.getName());
+//                    System.out.println(p.getBirthday());
+//                    System.out.println(p.getScore());
+//                    System.out.println(p.getIsSick());
+//                }
+//        );
 
         System.out.println("retourner seulement les premiers 5 patients");
         Page<Patient> patients = patientRepository.findAll(PageRequest.of(1, 5));

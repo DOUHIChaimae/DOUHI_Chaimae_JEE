@@ -21,7 +21,10 @@ public class HospitalServiceImpl implements IHospitalService {
     private AppointmentRepository appointmentRepository;
     private ConsultationRepository consultationRepository;
 
-    public HospitalServiceImpl(PatientRepository patientRepository, DoctorRepository doctorRepository, AppointmentRepository appointmentRepository, ConsultationRepository consultationRepository) {
+    public HospitalServiceImpl(PatientRepository patientRepository,
+                               DoctorRepository doctorRepository,
+                               AppointmentRepository appointmentRepository,
+                               ConsultationRepository consultationRepository) {
         this.patientRepository = patientRepository;
         this.doctorRepository = doctorRepository;
         this.appointmentRepository = appointmentRepository;
