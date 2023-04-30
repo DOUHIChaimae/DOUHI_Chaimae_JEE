@@ -12,23 +12,23 @@
 <div layout:fragment="content1">
     <div class="col-md-6 offset-3">
         <form method="post" th:action="@{/admin/save}">
-            <div>
-                <label for="nom">Nom</label>
+            <div class="mb-3">
+                <label for="nom" class="form-label">Nom</label>
                 <input id="nom" class="form-control" type="text" name="nom" th:value="${patient.nom}">
                 <span class="text-danger" th:errors="${patient.nom}"></span>
             </div>
-            <div>
-                <label>Date de naissance</label>
+            <div class="mb-3">
+                <label class="form-label">Date de naissance</label>
                 <input class="form-control" type="date" name="dateNaissance" th:value="${patient.dateNaissance}">
                 <span class="text-danger" th:errors="${patient.dateNaissance}"></span>
             </div>
-            <div>
-                <label>Malade</label>
-                <input type="checkbox" name="malade" th:checked="${patient.malade}">
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" name="malade" th:checked="${patient.malade}">
+                <label class="form-check-label">Malade</label>
                 <span class="text-danger" th:errors="${patient.malade}"></span>
             </div>
-            <div>
-                <label>Score</label>
+            <div class="mb-3">
+                <label class="form-label">Score</label>
                 <input class="form-control" type="text" name="score" th:value="${patient.score}">
                 <span class="text-danger" th:errors="${patient.score}"></span>
             </div>

@@ -1,18 +1,48 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="template1">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Patients Management</title>
-    <link rel="stylesheet" href="/webjars/bootstrap/5.2.3/css/bootstrap.min.css">
+    <title>Accès interdit</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            color: #444444;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-<div layout:fragment="content1">
-<div class="alert alert-danger" m-3>
-    <h2>Not Authorized</h2>
-</div>
+<div class="container">
+    <h1>Accès interdit</h1>
+    <p>Désolé, vous n'êtes pas autorisé à accéder à cette page.</p>
+    <p><a href="/user/index">Retour à l'accueil</a></p>
 </div>
 </body>
 </html>

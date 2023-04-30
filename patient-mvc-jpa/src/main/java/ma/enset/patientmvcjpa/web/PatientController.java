@@ -6,7 +6,6 @@ import ma.enset.patientmvcjpa.entities.Patient;
 import ma.enset.patientmvcjpa.repositories.PatientRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,31 +19,16 @@ import java.util.List;
 @Controller
 @AllArgsConstructor
 public class PatientController {
-
-
-    /**
-     * On injecte patientRepository pour acceder
-     * a la base de donnee soit via authowired ou bien le constructeur ou bien AllArgsConstructor
-     * <p>
-     * 1. @Autowired
-     * private PatientRepository patientRepository;
-     * 2.  public PatientController(PatientRepository patientRepository) {
-     * this.patientRepository = patientRepository;
-     * }
-     */
     private PatientRepository patientRepository;
 
-    @GetMapping("/user/index") //patients -> la vue(patients.html)
+    @GetMapping("/user/index")
     public String patients(Model model,
                            @RequestParam(name = "page", defaultValue = "0") int page,
                            @RequestParam(name = "size", defaultValue = "5") int size,
                            @RequestParam(name = "keyword", defaultValue = "") String keyword
     ) {
-        //on recupere la liste des patients
-        //List<Patient> patients = patientRepository.findAll();
+
         Page<Patient> pagePatients = patientRepository.findByNomContains(keyword, PageRequest.of(page, size));
-        //on la stocke ds model
-        //model.addAttribute("listPatients", patients);
         model.addAttribute("listPatients", pagePatients.getContent());
         model.addAttribute("pages", new int[pagePatients.getTotalPages()]);
         model.addAttribute("currentPage", page);
@@ -63,9 +47,9 @@ public class PatientController {
         return "redirect:/user/index";
     }
 
-    //restController
+
     @GetMapping("patients")
-    @ResponseBody //serialer la liste sous forme json
+    @ResponseBody
     public List<Patient> patientList() {
         return patientRepository.findAll();
     }
@@ -96,6 +80,5 @@ public class PatientController {
         model.addAttribute("keyword", keyword);
         return "editPatient";
     }
-
 }
 

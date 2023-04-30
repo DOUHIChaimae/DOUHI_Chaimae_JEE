@@ -30,38 +30,7 @@ public class PatientMvcJpaApplication {
                     new Patient(null, "lolo", new Date(), true, 123));
             patientRepository.save(
                     new Patient(null, "nour", new Date(), false, 100));
-
-            List<Patient> patientList = patientRepository.findAll();
-            patientList.forEach(
-                    patient -> {
-                        System.out.println("=================================");
-                        System.out.println(patient.getId());
-                        System.out.println(patient.getNom());
-                        System.out.println(patient.getScore());
-                        System.out.println(patient.getDateNaissance());
-                        System.out.println(patient.getMalade());
-                    }
-            );
-            Patient patient = patientRepository.findById(1L).orElse(null);
-            System.out.println("==========consulter un patient==================");
-            if (patient != null) {
-                System.out.println(patient.getId());
-                System.out.println(patient.getNom());
-                System.out.println(patient.getScore());
-                System.out.println(patient.getDateNaissance());
-                System.out.println(patient.getMalade());
-            }
-            patient.setScore(258);
-            patientRepository.save(patient);
-            System.out.println("les informations du patients 1 que nous avons mis à jour ");
-            System.out.println(patient.getId());
-            System.out.println(patient.getNom());
-            System.out.println(patient.getScore());
-            System.out.println(patient.getDateNaissance());
-            System.out.println(patient.getMalade());
-            patientRepository.deleteById(1L);
         };
-
     }
 
     @Bean
