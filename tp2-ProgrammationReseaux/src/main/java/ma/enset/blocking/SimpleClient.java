@@ -8,14 +8,18 @@ import java.util.Scanner;
 
 public class SimpleClient {
     public static void main(String[] args) throws IOException {
-        Socket socket = new Socket("localhost",1234);
-        InputStream is = socket.getInputStream();
-        OutputStream os = socket.getOutputStream();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("donner un nombre");
-        int nb = scanner.nextInt();
-        os.write(nb);
-        int response = is.read();
-        System.out.println("reponse "+response);
+        try {
+            Socket socket = new Socket("localhost", 1234);
+            InputStream is = socket.getInputStream();
+            OutputStream os = socket.getOutputStream();
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("donner un nombre");
+            int nb = scanner.nextInt();
+            os.write(nb);
+            int response = is.read();
+            System.out.println("reponse " + response);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

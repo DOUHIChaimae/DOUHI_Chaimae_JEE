@@ -46,11 +46,11 @@ public class MultiThreadBlockingServer extends Thread {
                 OutputStream os = socket.getOutputStream();
                 PrintWriter pw = new PrintWriter(os, true);
                 String ip = socket.getRemoteSocketAddress().toString();
-                System.out.println("New client connexion = " + clientId + " Ip = " + ip);
-                pw.println("welcome, your ID is " + clientsCount);
+                System.out.println("New client connexion = " + clientId + " IP = " + ip);
+                pw.println("welcome, you are the client " + clientsCount);
                 String request;
                 while ((request = br.readLine()) != null) {
-                    System.out.println("New request  => Ip : " + ip + " request : " + request);
+                    System.out.println(ip + " send the request : " + request);
                     String reponse = "size is " + request.length();
                     pw.println(reponse);
                 }

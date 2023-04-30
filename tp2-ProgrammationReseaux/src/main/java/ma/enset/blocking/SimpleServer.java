@@ -11,7 +11,7 @@ public class SimpleServer {
 
         try {
             ServerSocket ss = new ServerSocket(1234);
-            System.out.println("I'm waiting new connection");
+            System.out.println("I'm waiting a new connection");
             Socket socket = ss.accept();
             InputStream is = socket.getInputStream();
             OutputStream os = socket.getOutputStream();

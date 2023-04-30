@@ -27,7 +27,6 @@ public class MultiThreadChatServer extends Thread {
                 Conversation conversation = new Conversation(socket, clientsCount);
                 conversations.add(conversation);
                 conversation.start();
-
             }
 
         } catch (IOException e) {
@@ -57,8 +56,16 @@ public class MultiThreadChatServer extends Thread {
                 pw.println("welcome, your ID is " + clientsCount);
                 String request;
                 while ((request = br.readLine()) != null) {
-                    System.out.println("New request  => Ip : " + ip + " request : " + request);
-                    broadCastMessage(request);
+                    if (request.contains("=>")) {
+                        String[] requestParams = request.split("=>");
+                        if (requestParams.length == 2) ;
+                        String message = requestParams[1];
+                        int numeroClient = Integer.parseInt(requestParams[0]);
+                        System.out.println("New request  => Ip : " + ip + " request : " + request);
+                        broadCastMessage(message, socket, numeroClient);
+                    } else {
+                        broadCastMessage(request, socket, -1);
+                    }
                 }
 
             } catch (IOException e) {
@@ -67,13 +74,15 @@ public class MultiThreadChatServer extends Thread {
         }
     }
 
-    public void broadCastMessage(String message) {
+    public void broadCastMessage(String message, Socket socket, int numeroClient) {
         try {
             for (Conversation conversation : conversations) {
-                Socket socket = conversation.socket;
-                OutputStream outputStream = socket.getOutputStream();
-                PrintWriter printWriter = new PrintWriter(outputStream,true);
-                printWriter.println(message);
+                if (conversation.socket != socket) {
+                    if (conversation.clientId == numeroClient || conversation.clientId == -1) {
+                        PrintWriter printWriter = new PrintWriter(conversation.socket.getOutputStream(), true);
+                        printWriter.println(message);
+                    }
+                }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
