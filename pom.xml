@@ -13,6 +13,7 @@
         <module>tp2-ProgrammationReseaux</module>
         <module>tp3-jpa-hibernate-springdata</module>
         <module>enset-ws</module>
+        <module>enset-ws/ClientWs</module>
     </modules>
 
     <properties>
