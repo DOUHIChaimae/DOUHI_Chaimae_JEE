@@ -15,7 +15,7 @@ public class MetierImpl implements IMetier {
         return res;
     }
 
-    //setDao() to inject in dao variable an object of a clss that implements IDao interface
+    //setDao() to inject in dao variable an object of a class that implements IDao interface
     public void setDao(IDao dao) {
         this.dao = dao;
     }
