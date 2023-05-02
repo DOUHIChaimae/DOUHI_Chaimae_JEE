@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/tp3-jpa-hibernate-springdata/pom.xml" />
         <option value="$PROJECT_DIR$/tp4-patients-mvc/pom.xml" />
         <option value="$PROJECT_DIR$/patient-mvc-jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/tp6-bank-account-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

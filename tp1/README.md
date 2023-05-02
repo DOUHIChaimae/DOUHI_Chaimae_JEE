@@ -80,7 +80,7 @@ public class MetierImpl implements IMetier {
 ```
 
 ## Faire l'injection des dépendances
-L'injection des dépendances nous permet de séparer le code metier et le code technique , pour le faire on peut travailler avec les méthodes suivants :  
+L'injection des dépendances nous permet de séparer le code métier et le code technique , pour le faire on peut travailler avec les méthodes suivantes :  
 ### Par instanciation statique
 ```java
 package ma.enset.tp1.part1.presentation;

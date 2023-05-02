@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>ma.enset</groupId>
-	<artifactId>tp6-micro-service</artifactId>
+	<artifactId>tp6-bank-account-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>tp6-micro-service</name>
-	<description>tp6-micro-service</description>
+	<name>tp6-bank-account-service</name>
+	<description>tp6-bank-account-service</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -23,13 +23,14 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>

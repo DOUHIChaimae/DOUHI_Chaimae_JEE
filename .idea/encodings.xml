@@ -25,5 +25,8 @@
     <file url="file://$PROJECT_DIR$/tp3-jpa-hibernate-springdata/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tp4-patients-mvc/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tp4-patients-mvc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp6-bank-account-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp6-bank-account-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tp6-micro-service/src/main/java" charset="UTF-8" />
   </component>
 </project>

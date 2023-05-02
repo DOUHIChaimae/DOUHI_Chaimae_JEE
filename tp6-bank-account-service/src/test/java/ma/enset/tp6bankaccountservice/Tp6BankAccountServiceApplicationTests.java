@@ -1,10 +1,10 @@
-package ma.enset.tp6microservice;
+package ma.enset.tp6bankaccountservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Tp6MicroServiceApplicationTests {
+class Tp6BankAccountServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
