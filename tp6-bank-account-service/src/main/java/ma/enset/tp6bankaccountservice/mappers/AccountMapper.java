@@ -13,9 +13,9 @@ public class AccountMapper {
         BeanUtils.copyProperties(bankAccount,bankAccountResponseDto);
         return bankAccountResponseDto;
     }
-//    public BankAccount fromBankAccountDTO(BankAccountResponseDto bankAccountResponseDto){
-//        BankAccount bankAccount = new BankAccount();
-//        BeanUtils.copyProperties(bankAccountResponseDto, bankAccount);
-//        return bankAccount;
-//    }
+    public BankAccount fromBankAccountDTO(BankAccountResponseDto bankAccountResponseDto){
+        BankAccount bankAccount = new BankAccount();
+        BeanUtils.copyProperties(bankAccountResponseDto, bankAccount);
+        return bankAccount;
+    }
 }
