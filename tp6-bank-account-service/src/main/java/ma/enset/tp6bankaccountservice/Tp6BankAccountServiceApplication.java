@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @SpringBootApplication
@@ -32,7 +33,17 @@ public class Tp6BankAccountServiceApplication {
                 bankAccountRepository.save(bankAccount);
 
             }
+            List<BankAccount> bankAccountList = bankAccountRepository.findAll();
+            for (BankAccount bankAccount : bankAccountList){
+                System.out.println("=========================");
+                System.out.println(bankAccount.getId());
+                System.out.println(bankAccount.getCurrency());
+                System.out.println(bankAccount.getType());
+                System.out.println(bankAccount.getCreatedAt());
+                System.out.println(bankAccount.getBalance());
+            }
         };
     }
-
 }
+
+
