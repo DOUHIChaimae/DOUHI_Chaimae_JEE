@@ -38,6 +38,17 @@ public class BankAccountGraphQLController {
     public BankAccountResponseDto addAccount(@Argument BankAccountRequestDTO bankAccount) {
         return accountService.addAccount(bankAccount);
     }
+
+    @MutationMapping
+    public BankAccountResponseDto updateAccount(@Argument String id, @Argument BankAccountRequestDTO bankAccount) {
+        return accountService.updateAccount(id, bankAccount);
+    }
+
+    @MutationMapping
+    public Boolean deleteAccount(@Argument String id) {
+        bankAccountRepository.deleteById(id);
+        return true;
+    }
 }
 /*
 record BankAccountDTO{

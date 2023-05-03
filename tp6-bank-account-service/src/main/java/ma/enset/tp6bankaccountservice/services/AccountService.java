@@ -9,4 +9,5 @@ public interface AccountService {
      */
 
     public BankAccountResponseDto addAccount(BankAccountRequestDTO bankAccountDTO);
+    public BankAccountResponseDto updateAccount(String id,BankAccountRequestDTO bankAccountDTO);
 }
