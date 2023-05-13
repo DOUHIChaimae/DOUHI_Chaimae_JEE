@@ -9,25 +9,24 @@ using the latest and greatest technologies. Throughout this lab, we followed the
 - Creation of the JPA Repository interface based on Spring Data
 - Test of some patient management operations, such as adding, consulting, finding, updating and deleting patients
 - Migration from H2 Database to MySQL
-- Addition of doctors, consultations, appointments, users and roles
 
 ### Login page
-![login]()
+![login](https://github.com/DOUHIChaimae/douhi_chaimae_jee/blob/master/patient-mvc-jpa/images/login.png)
 
 ### Patient list
-![patient list]()
+![patient list](https://github.com/DOUHIChaimae/douhi_chaimae_jee/blob/master/patient-mvc-jpa/images/patients.png)
 
 ### Search for a patient
-![search for a patient]()
+![search for a patient](https://github.com/DOUHIChaimae/douhi_chaimae_jee/blob/master/patient-mvc-jpa/images/searchPatient.png)
 
 ### Add new patient
-![new patient]()
+![new patient](https://github.com/DOUHIChaimae/douhi_chaimae_jee/blob/master/patient-mvc-jpa/images/addNewPatient.png)
 
 ### delete a patient
-![delete]()
+![delete](https://github.com/DOUHIChaimae/douhi_chaimae_jee/blob/master/patient-mvc-jpa/images/delete.png)
 
 ### Edit a patient
-![edit]()
+![edit](https://github.com/DOUHIChaimae/douhi_chaimae_jee/blob/master/patient-mvc-jpa/images/edit.png)
 
 
 
