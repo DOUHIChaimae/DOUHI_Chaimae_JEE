@@ -20,7 +20,7 @@ using the latest and greatest technologies. Throughout this lab, we followed the
 ![search for a patient](https://github.com/DOUHIChaimae/douhi_chaimae_jee/blob/master/patient-mvc-jpa/images/searchPatient.png)
 
 ### Add new patient
-![new patient](https://github.com/DOUHIChaimae/douhi_chaimae_jee/blob/master/patient-mvc-jpa/images/addNewPatient.png)
+![new patient](https://github.com/DOUHIChaimae/douhi_chaimae_jee/blob/master/patient-mvc-jpa/images/newPatient.png)
 
 ### delete a patient
 ![delete](https://github.com/DOUHIChaimae/douhi_chaimae_jee/blob/master/patient-mvc-jpa/images/delete.png)
