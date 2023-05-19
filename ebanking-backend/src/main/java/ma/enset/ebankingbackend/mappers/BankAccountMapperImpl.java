@@ -19,6 +19,14 @@ public class BankAccountMapperImpl {
         return customerDTO;
     }
 
+    /*public CustomerDTO fromCustomerUsingSetters(Customer customer) {
+        CustomerDTO customerDTO = new CustomerDTO();
+        customerDTO.setId(customer.getId());
+        customerDTO.setName(customer.getName());
+        customerDTO.setEmail(customer.getEmail());
+        return customerDTO;
+    }*/
+
     public Customer fromCustomerDTO(CustomerDTO customerDTO) {
         Customer customer = new Customer();
         BeanUtils.copyProperties(customerDTO, customer);

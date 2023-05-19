@@ -79,11 +79,9 @@ public class BankAccountServiceImpl implements BankAccountService {
         /*
         List<CustomerDTO> customerDTOS=new ArrayList<>();
         for (Customer customer:customers){
-            CustomerDTO customerDTO=dtoMapper.fromCustomer(customer);
+            CustomerDTO customerDTO = dtoMapper.fromCustomer(customer);
             customerDTOS.add(customerDTO);
-        }
-        *
-         */
+        }*/
         return customerDTOS;
     }
 
@@ -153,6 +151,7 @@ public class BankAccountServiceImpl implements BankAccountService {
         return bankAccountDTOS;
     }
 
+    //to consult a client
     @Override
     public CustomerDTO getCustomer(Long customerId) throws CustomerNotFoundException {
         Customer customer = customerRepository.findById(customerId)

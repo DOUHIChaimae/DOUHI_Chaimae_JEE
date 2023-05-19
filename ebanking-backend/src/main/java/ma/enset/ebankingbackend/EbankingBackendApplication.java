@@ -48,7 +48,7 @@ public class EbankingBackendApplication {
                     bankAccountService.saveSavingBankAccount(Math.random() * 120000, 5.5, customer.getId());
                     List<BankAccountDTO> bankAccounts = bankAccountService.bankAccountList();
                     for (BankAccountDTO bankAccount : bankAccounts) {
-                        for (int i = 0; i < 10; i++) {
+                        for (int i = 0; i < 4; i++) {
                             String accountId;
                             if (bankAccount instanceof SavingBankAccountDTO) {
                                 accountId = ((SavingBankAccountDTO) bankAccount).getId();
@@ -119,3 +119,5 @@ public class EbankingBackendApplication {
         };
     }*/
 }
+/*localhost:8085/swagger-ui.html
+http://localhost:8085/v3/api-docs*/
