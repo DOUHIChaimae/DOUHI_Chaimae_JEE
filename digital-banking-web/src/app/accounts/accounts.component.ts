@@ -14,6 +14,7 @@ export class AccountsComponent implements OnInit {
   currentPage: number = 0;
   pageSize: number = 5;
   accountObservable!: Observable<AccountDetails>;
+  operationFromGroup!: FormGroup;
 
   constructor(private fb: FormBuilder, private accountService: AccountsService) {
   }
@@ -22,7 +23,12 @@ export class AccountsComponent implements OnInit {
     this.accountFormGroup = this.fb.group({
       accountId: this.fb.control('')
     });
-
+    this.operationFromGroup = this.fb.group({
+      operationType: this.fb.control(null),
+      mount: this.fb.control(0),
+      description: this.fb.control(null),
+      accountDestination: this.fb.control(null)
+    })
   }
 
   handleSearchAccount() {
@@ -33,5 +39,43 @@ export class AccountsComponent implements OnInit {
   gotoPage(page: number) {
     this.currentPage = page;
     this.handleSearchAccount();
+  }
+
+  handleAccountOperation() {
+    let accountId: string = this.accountFormGroup.value.accountId;
+    let operationType = this.operationFromGroup.value.operationType;
+    let mount: number = this.operationFromGroup.value.mount;
+    let description: string = this.operationFromGroup.value.description;
+    let accountDestination: string = this.operationFromGroup.value.accountDestination;
+    if (operationType == 'DEBIT') {
+      this.accountService.debit(accountId, mount, description).subscribe({
+        next: (data) => {
+          alert("Succes Debit");
+          this.handleSearchAccount();
+        }, error: (err) => {
+          console.log(err);
+        }
+
+      });
+    } else if (operationType == 'CREDIT') {
+      this.accountService.credit(accountId, mount, description).subscribe({
+        next: (data) => {
+          alert("Succes Credit");
+          this.handleSearchAccount();
+        }, error: (err) => {
+          console.log(err);
+        }
+
+      });
+    } else if (operationType == 'TRANSFER') {
+      this.accountService.transfer(accountId, accountDestination, mount, description).subscribe({
+        next: (data) => {
+          alert("Succes Transfer");
+          this.handleSearchAccount();
+        }, error:( err) => {
+          console.log(err);
+        }
+      });
+    }
   }
 }

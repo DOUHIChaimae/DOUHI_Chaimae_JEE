@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Customer} from "../model/customer.model";
 import {AccountDetails} from "../model/account.model";
 
 @Injectable({
@@ -18,15 +17,18 @@ export class AccountsService {
     return this.http.get<AccountDetails>(this.backendHost + "/accounts/" + accountId + "/pageOperations?page=" + page + "&size=" + size)
   }
 
-  public searchCustomers(keyword: string): Observable<Array<Customer>> {
-    return this.http.get<Array<Customer>>(this.backendHost + "/customers/search?keyword=" + keyword)
+  public debit(accountId: string, mount: number, description: string) {
+    let data = {accountId: accountId, mount: mount, description: description}
+    return this.http.post(this.backendHost + "/customers/debit", data);
   }
 
-  public saveCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(this.backendHost + "/customers", customer);
+  public credit(accountId: string, mount: number, description: string) {
+    let data = {accountId: accountId, mount: mount, description: description}
+    return this.http.post(this.backendHost + "/customers/credit", data);
   }
 
-  public deleteCustomer(id: number) {
-    return this.http.delete(this.backendHost + "/customers/" + id);
+  public transfer(accountSource: string, accountDestination: string, mount: number, description: string) {
+    let data = {accountSource, accountDestination, mount, description}
+    return this.http.post(this.backendHost + "/customers/transfer", data);
   }
 }
