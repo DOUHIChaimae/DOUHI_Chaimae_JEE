@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ProductManagement" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ebanking-backend" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/patient-mvc-jpa" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tp1" vcs="Git" />

@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CommonModule } from '@angular/common';
 import { NewCustomerComponent } from './new-customer/new-customer.component';
+import { CustomerAccountsComponent } from './customer-accounts/customer-accounts.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NewCustomerComponent } from './new-customer/new-customer.component';
     CustomersComponent,
     AccountsComponent,
     NewCustomerComponent,
+    CustomerAccountsComponent,
 
   ],
   imports: [
