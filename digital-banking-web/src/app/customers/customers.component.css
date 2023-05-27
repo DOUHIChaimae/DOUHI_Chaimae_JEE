@@ -1,0 +1,65 @@
+.transparent-button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+
+.transparent-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.transparent-button:hover::before {
+  animation: shimmer 2s infinite;
+}
+
+.delete-button::before {
+  border-color: red;
+}
+
+.account-button::before {
+  border-color: green;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.AddSection a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.actions-column {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.purple-border {
+  background-color: #83509d;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+

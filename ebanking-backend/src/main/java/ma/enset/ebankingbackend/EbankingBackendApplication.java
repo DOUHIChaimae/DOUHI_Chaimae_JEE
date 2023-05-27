@@ -20,6 +20,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -116,6 +117,11 @@ public class EbankingBackendApplication {
             });
         };
     }*/
+//   @Bean
+//   PasswordEncoder passwordEncoder(){
+//       return new BCryptPasswordEncoder();
+//   }
+
 }
 
 

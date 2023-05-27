@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Customer} from "../model/customer.model";
 import {CustomerService} from "../services/customer.service";
 import {Router} from "@angular/router";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-new-customer',
@@ -12,7 +13,7 @@ import {Router} from "@angular/router";
 export class NewCustomerComponent implements OnInit {
   newCustomerFormGroup!: FormGroup;
 
-  constructor(private fb: FormBuilder, private customerService: CustomerService,private roter:Router) {
+  constructor(private fb: FormBuilder, private customerService: CustomerService, private roter: Router) {
   }
 
   ngOnInit(): void {
@@ -26,10 +27,19 @@ export class NewCustomerComponent implements OnInit {
     let customer: Customer = this.newCustomerFormGroup.value;
     this.customerService.saveCustomer(customer).subscribe({
       next: data => {
-        alert("Customer has been saved successfully!");
-        //this.newCustomerFormGroup.reset();
-        this.roter.navigateByUrl("/customers");
-      }, error: err => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Customer added',
+          showConfirmButton: false,
+          timer: 1000
+        })
+        setTimeout(() => {
+          this.newCustomerFormGroup.reset();
+          this.roter.navigateByUrl("/customers");
+        }, 1100);
+      },
+      error: err => {
         console.log(err);
       }
     });

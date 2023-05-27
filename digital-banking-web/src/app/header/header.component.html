@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-sm navbar-light">
+  <div class="container">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active font-weight-bold fs-5 purple-link" [routerLink]="['/customers']">
+          <span class="link-text">Customers</span>
+          <span class="hover-line"></span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link active font-weight-bold fs-5 purple-link" [routerLink]="['/accounts']">
+          <span class="link-text">Accounts</span>
+          <span class="hover-line"></span>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link active text-dark">Hi <span>{{CurrentUser}}</span> 👋</a>
+      </li>
+      <li class="nav-item">
+        <a style="cursor: pointer;" class="nav-link active" (click)="logout()">logout <i class="bi bi-box-arrow-right"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>

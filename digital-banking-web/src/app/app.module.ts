@@ -10,6 +10,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CommonModule } from '@angular/common';
 import { NewCustomerComponent } from './new-customer/new-customer.component';
 import { CustomerAccountsComponent } from './customer-accounts/customer-accounts.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { CustomerAccountsComponent } from './customer-accounts/customer-accounts
     AccountsComponent,
     NewCustomerComponent,
     CustomerAccountsComponent,
+    FooterComponent,
+    LoginComponent,
+    HeaderComponent,
 
   ],
   imports: [

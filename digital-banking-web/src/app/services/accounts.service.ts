@@ -17,18 +17,19 @@ export class AccountsService {
     return this.http.get<AccountDetails>(this.backendHost + "/accounts/" + accountId + "/pageOperations?page=" + page + "&size=" + size)
   }
 
-  public debit(accountId: string, mount: number, description: string) {
-    let data = {accountId: accountId, mount: mount, description: description}
-    return this.http.post(this.backendHost + "/customers/debit", data);
+  public debit(accountId: string, amount: number, description: string) {
+    let data={accountId : accountId, amount : amount, description : description}
+    return this.http.post(this.backendHost + "/accounts/debit", data);
   }
 
-  public credit(accountId: string, mount: number, description: string) {
-    let data = {accountId: accountId, mount: mount, description: description}
-    return this.http.post(this.backendHost + "/customers/credit", data);
+  public credit(accountId: string, amount: number, description: string) {
+    let data={accountId : accountId, amount : amount, description : description}
+    return this.http.post(this.backendHost + "/accounts/credit", data);
   }
 
-  public transfer(accountSource: string, accountDestination: string, mount: number, description: string) {
-    let data = {accountSource, accountDestination, mount, description}
-    return this.http.post(this.backendHost + "/customers/transfer", data);
+  public transfer(accountSource: string, accountDestination: string, amount: number, description: string) {
+    let data={accountSource, accountDestination, amount, description }
+    return this.http.post(this.backendHost + "/accounts/transfer", data);
   }
+
 }

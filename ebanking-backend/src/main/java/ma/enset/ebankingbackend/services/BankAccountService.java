@@ -39,6 +39,8 @@ public interface BankAccountService {
 
     List<CustomerDTO> searchCustomers(String keyword);
 
+    List<BankAccountDTO> listBankAccountsOfCustomer(Long id);
+
     /*Customer saveCustomer(Customer cust);
 
     BankAccount savebankAccount(double initialBalance, String type, Long customerId);*/

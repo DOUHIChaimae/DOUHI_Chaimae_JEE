@@ -1,38 +1,55 @@
-<div class="container mt-2">
-  <ng-container *ngIf="customers | async as listCustomers; else failureOrLading">
+<div class="container mt-2" style="color: #83509d">
+  <ng-container *ngIf="customers | async as listCustomers; else failureOrLoading">
     <div class="card">
-      <div class="card-header">Customers</div>
+      <div class="card-header bg-light text-dark">Customers</div>
       <div class="card-body">
         <div *ngIf="searchFormGroup">
           <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCustomers()">
-            <div class="input-group">
-              <label class="input-group-text">Keyword :</label>
-              <input type="text" formControlName="keyword" class="form-control">
-              <button class="btn btn-info">
-                <i class="bi bi-search"></i>
-              </button>
+            <div class="row">
+              <div class="col-sm-9 col-xs-12 text-right">
+                <div class="input-group">
+                  <input
+                    placeholder="Search"
+                    name="keyword"
+                    id="keyword"
+                    formControlName="keyword"
+                    type="text"
+                    class="form-control"
+                  />
+                  <button class="btn btn-default purple-border" type="submit" title="Search">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="col col-sm-3 col-xs-12">
+                <h4 class="AddSection">
+                  <a [routerLink]="['/new-customer']" style="color: purple;">Add customer <i
+                    class="bi bi-person-plus"></i></a>
+                </h4>
+              </div>
             </div>
           </form>
         </div>
-        <table class="table">
+        <table class="table table-hover">
           <thead>
           <tr>
-            <th>ID</th><th>Name</th><th>Email</th>
+            <th style="color: purple;">ID</th>
+            <th style="color: purple;">Name</th>
+            <th style="color: purple;">Email</th>
+            <th style="color: purple;">ACTIONS</th>
           </tr>
           </thead>
           <tbody>
           <tr *ngFor="let c of customers | async">
-            <td>{{c.id}}</td>
-            <td>{{c.name}}</td>
-            <td>{{c.email}}</td>
-            <td>
-              <button (click)="handleDeleteCustomer(c)" class="btn btn-danger">
+            <td>{{ c.id }}</td>
+            <td>{{ c.name }}</td>
+            <td>{{ c.email }}</td>
+            <td class="align-content-center" class="actions-column">
+              <button (click)="handleDeleteCustomer(c)" class="btn btn-danger transparent-button delete-button">
                 <i class="bi bi-trash"></i>
               </button>
-            </td>
-            <td>
-              <button (click)="handleCustomerAccounts(c)" class="btn btn-success">
-                Accounts
+              <button (click)="handleCustomerAccounts(c)" class="btn btn-success transparent-button account-button">
+                <i class="bi bi-credit-card"></i> Accounts
               </button>
             </td>
           </tr>
@@ -41,14 +58,18 @@
       </div>
     </div>
   </ng-container>
-  <ng-template #failureOrLading>
+  <ng-template #failureOrLoading>
     <ng-container *ngIf="errorMessage; else loading">
       <div class="text-danger">
-        {{errorMessage}}
+        {{ errorMessage }}
       </div>
     </ng-container>
     <ng-template #loading>
-      Loading .....
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="spinner-border text-primary" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
     </ng-template>
   </ng-template>
 </div>

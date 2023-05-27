@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Customer} from "../model/customer.model";
+import {BankAccount} from "../model/account.model";
 
 @Injectable({
   providedIn: 'root'
@@ -22,9 +23,16 @@ export class CustomerService {
   }
 
   public saveCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(this.backendHost + "/customers",customer);
+    return this.http.post<Customer>(this.backendHost + "/customers", customer);
   }
-  public deleteCustomer(id : number){
-    return this.http.delete(this.backendHost + "/customers/"+id);
+
+  public deleteCustomer(id: number) {
+    return this.http.delete(this.backendHost + "/customers/" + id);
+  }
+
+  public getAccountsofCustomer(CustomerId: number): Observable<Array<BankAccount>> {
+    return this.http.get<Array<BankAccount>>(
+      this.backendHost + '/customers/' + CustomerId + '/accounts/'
+    );
   }
 }

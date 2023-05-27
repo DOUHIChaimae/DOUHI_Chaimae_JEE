@@ -1,4 +1,4 @@
-<div class="container mt-2">
+<div class="container mt-2" style="color:#83509d">
   <div class="row">
     <div class="col col-md-6">
       <div class="card">
@@ -6,11 +6,10 @@
         <div class="card-body">
           <form [formGroup]="accountFormGroup" (ngSubmit)="handleSearchAccount()">
             <div class="input-group">
-              <label class="input-group-text">Account Id :</label>
+              <label class="input-group-text">Account Id</label>
               <input type="text" formControlName="accountId" class="form-control">
               <button class="btn btn-info">
                 <i class="bi bi-search"></i>
-                Search
               </button>
             </div>
           </form>
@@ -24,29 +23,30 @@
           </ng-template>
           <ng-container *ngIf="accountObservable | async as accountDetails">
             <div class="mb-2">
-              <label>Account ID :</label>
-              <label><strong>{{accountDetails.accountId}}</strong></label>
-            </div>
-            <div class="mb-2">
-              <label>Balance :</label>
-              <label><strong>{{accountDetails.balance | number : '1.2-2'}}</strong></label>
+              <h6 class="text-center display-5" style="color: purple;">
+                Balance : <strong>{{accountDetails.balance | currency }} </strong>
+              </h6>
             </div>
             <table class="table">
               <thead>
-              <th>ID</th><th>Date</th><th>Type</th><th>Amount</th>
+              <th style="color: cornflowerblue;">ID</th>
+              <th class="text-center" style="color: cornflowerblue;">Date</th>
+              <th class="text-center" style="color: cornflowerblue;">Type</th>
+              <th class="text-center" style="color: cornflowerblue;">Amount</th>
               </thead>
               <tbody>
               <tr *ngFor="let op of accountDetails.accountOperationDTOS">
                 <td>{{op.id}}</td>
-                <td>{{op.operationDate | date : 'dd-MM-yyyy:HH-mm-ss'}}</td>
-                <td>{{op.type}}</td>
-                <td class="text-end">{{op.amount | number : '1.2-2'}}</td>
+                <td class="text-center">{{op.operationDate | date : 'dd-MM-yyyy:HH-mm-ss'}}</td>
+                <td class="text-center">{{op.type}}</td>
+                <td class="text-end">{{op.amount | currency }}</td>
               </tr>
               </tbody>
             </table>
             <ul class="nav nav-pills">
               <li *ngFor="let item of [].constructor(accountDetails.totalPages);let page=index">
-                <a [ngClass]="page==currentPage?'btn-info':'btn-outline-info'" (click)="gotoPage(page)" class="btn  ms-1 mt-1">{{page}}</a>
+                <a [ngClass]="page==currentPage?'btn-info':'btn-outline-info'" (click)="gotoPage(page)"
+                   class="btn  ms-1 mt-1">{{page}}</a>
               </li>
             </ul>
           </ng-container>

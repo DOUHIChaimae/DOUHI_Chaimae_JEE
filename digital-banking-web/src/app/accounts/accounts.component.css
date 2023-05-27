@@ -1,0 +1,36 @@
+.btn-pagination {
+  background-color: transparent;
+  border-color: #000;
+  color: #000;
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+}
+
+.btn-pagination:hover {
+  background-color: #83509d;
+  color: #fff;
+}
+
+.btn-info {
+  border-color: #83509d;
+  color: #000;
+  background-color: transparent;
+}
+
+.btn-outline-info {
+  border-color: #83509d;
+  color: #000;
+  background-color: transparent;
+}
+
+.btn-info:hover {
+  background-color: #83509d;
+  color: #fff;
+}
+
+.btn-outline-info:hover {
+  background-color: #83509d;
+  color: #fff;
+}
