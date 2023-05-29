@@ -9,13 +9,8 @@ import ma.enset.ebankingbackend.enums.AccountStatus;
 import java.util.Date;
 import java.util.List;
 @Entity
-//strategy 1 : single table
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "type",length = 4)
-/*strategy 2 : table per class
-/@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)*/
-/*strategy 3 : joined table
-@Inheritance(strategy = InheritanceType.JOINED)*/
 @Data @NoArgsConstructor @AllArgsConstructor
 public abstract class BankAccount {
     @Id

@@ -9,7 +9,7 @@ import {BankAccount} from "../model/account.model";
 })
 export class CustomerService {
 
-  backendHost: string = "http://localhost:8085"
+  backendHost: string = "http://localhost:8086"
 
   constructor(private http: HttpClient) {
   }

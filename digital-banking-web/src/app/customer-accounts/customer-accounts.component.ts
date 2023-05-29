@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, Observable, throwError } from 'rxjs';
+
 import { CustomerService } from 'src/app/services/customer.service';
 import {BankAccount} from "../model/account.model";
 
@@ -25,7 +26,6 @@ export class CustomerAccountsComponent implements OnInit {
     this.getBankAccounts();
   }
 
-  //handle getting bank accounts
   getBankAccounts() {
     this.BankAccounts = this.customerService
       .getAccountsofCustomer(this.customerId)

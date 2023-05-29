@@ -1,7 +1,10 @@
 package ma.enset.ebankingbackend.services;
 
 
-import ma.enset.ebankingbackend.dtos.*;
+import ma.enset.ebankingbackend.dtos.AccountHistoryDTO;
+import ma.enset.ebankingbackend.dtos.AccountOperationDTO;
+import ma.enset.ebankingbackend.dtos.BankAccountDTO;
+import ma.enset.ebankingbackend.dtos.CustomerDTO;
 import ma.enset.ebankingbackend.exceptions.BalanceNotSufficientException;
 import ma.enset.ebankingbackend.exceptions.BankAccountNotFoundException;
 import ma.enset.ebankingbackend.exceptions.CustomerNotFoundException;
@@ -11,9 +14,9 @@ import java.util.List;
 public interface BankAccountService {
     CustomerDTO saveCustomer(CustomerDTO customerDTO);
 
-    CurrentBankAccountDTO saveCurrentBankAccount(double initialBalance, double overDraft, Long customerId) throws CustomerNotFoundException;
+    BankAccountDTO saveCurrentBankAccount(double initialBalance, double overDraft, Long customerId) throws CustomerNotFoundException;
 
-    SavingBankAccountDTO saveSavingBankAccount(double initialBalance, double interestRate, Long customerId) throws CustomerNotFoundException;
+    BankAccountDTO saveSavingBankAccount(double initialBalance, double interestRate, Long customerId) throws CustomerNotFoundException;
 
     List<CustomerDTO> listCustomers();
 
