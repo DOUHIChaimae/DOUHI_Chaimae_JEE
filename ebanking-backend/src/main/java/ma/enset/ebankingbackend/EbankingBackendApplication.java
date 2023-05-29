@@ -4,27 +4,16 @@ import ma.enset.ebankingbackend.dtos.BankAccountDTO;
 import ma.enset.ebankingbackend.dtos.CurrentBankAccountDTO;
 import ma.enset.ebankingbackend.dtos.CustomerDTO;
 import ma.enset.ebankingbackend.dtos.SavingBankAccountDTO;
-import ma.enset.ebankingbackend.entities.*;
-import ma.enset.ebankingbackend.enums.AccountStatus;
-import ma.enset.ebankingbackend.enums.OperationType;
-import ma.enset.ebankingbackend.exceptions.BalanceNotSufficientException;
-import ma.enset.ebankingbackend.exceptions.BankAccountNotFoundException;
 import ma.enset.ebankingbackend.exceptions.CustomerNotFoundException;
-import ma.enset.ebankingbackend.repositories.AccountOperationRepository;
-import ma.enset.ebankingbackend.repositories.BankAccountRepository;
 import ma.enset.ebankingbackend.repositories.CustomerRepository;
 import ma.enset.ebankingbackend.services.BankAccountService;
-import ma.enset.ebankingbackend.services.BankService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-
-import java.util.Date;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Stream;
 
 @SpringBootApplication
