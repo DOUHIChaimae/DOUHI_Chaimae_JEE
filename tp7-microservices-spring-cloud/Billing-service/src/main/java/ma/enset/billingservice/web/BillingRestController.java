@@ -3,8 +3,11 @@ package ma.enset.billingservice.web;
 import ma.enset.billingservice.entities.Bill;
 import ma.enset.billingservice.feign.CustomerRestClient;
 import ma.enset.billingservice.feign.ProductItemRestClient;
+import ma.enset.billingservice.model.Customer;
+import ma.enset.billingservice.model.Product;
 import ma.enset.billingservice.repositories.BillRepository;
 import ma.enset.billingservice.repositories.ProductItemRepository;
+import org.springframework.hateoas.PagedModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -22,8 +25,13 @@ public class BillingRestController {
     }
 
     @GetMapping(path = "/fullBill/{id}")
-    public Bill getBill(@PathVariable Long id) {
+    public Bill getBill(@PathVariable(name = "id") Long id) {
         Bill bill = billRepository.findById(id).get();
+        Customer customer = customerRestClient.getCustomerById(bill.getCustomerID());
+        bill.getProductItems().forEach(productItem -> {
+            Product product =productItemRestClient.getProductById(productItem.getProductID());
+            productItem.setProduct(product);
+        });
         return bill;
     }
 }
