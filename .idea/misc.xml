@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/tp7-microservices-spring-cloud/inventory-service/pom.xml" />
         <option value="$PROJECT_DIR$/tp7-microservices-spring-cloud/gateway/pom.xml" />
         <option value="$PROJECT_DIR$/tp7-microservices-spring-cloud/EurekaDiscovery/pom.xml" />
+        <option value="$PROJECT_DIR$/tp7-microservices-spring-cloud/Billing-service/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
