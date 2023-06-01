@@ -15,6 +15,10 @@
         <option value="$PROJECT_DIR$/ebanking-backend/pom.xml" />
         <option value="$PROJECT_DIR$/ProductManagement/pom.xml" />
         <option value="$PROJECT_DIR$/conference-management-spring-angular/pom.xml" />
+        <option value="$PROJECT_DIR$/tp7-microservices-spring-cloud/pom.xml" />
+        <option value="$PROJECT_DIR$/tp7-microservices-spring-cloud/customer-service/pom.xml" />
+        <option value="$PROJECT_DIR$/tp7-microservices-spring-cloud/inventory-service/pom.xml" />
+        <option value="$PROJECT_DIR$/tp7-microservices-spring-cloud/gateway/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

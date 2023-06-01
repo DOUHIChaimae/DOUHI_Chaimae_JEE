@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Architectures-Micro-services-avec-Spring-Cloud-Config-Consul-Discovery" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ProductManagement" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/conference-management-spring-angular" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ebanking-backend" vcs="Git" />
@@ -9,5 +10,9 @@
     <mapping directory="$PROJECT_DIR$/tp1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tp3-jpa-hibernate-springdata" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tp4-patients-mvc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tp7-microservices-spring-cloud" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tp7-microservices-spring-cloud/customer-service" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tp7-microservices-spring-cloud/gateway" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tp7-microservices-spring-cloud/inventory-service" vcs="Git" />
   </component>
 </project>
